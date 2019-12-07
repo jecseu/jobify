@@ -10,7 +10,7 @@ const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), {Promi
 
 app.set("views", path.join(__dirname, "views"))
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(BodyParser.urlencoded({extended: false}))
 
 app.get('/', async (request, response) => {
